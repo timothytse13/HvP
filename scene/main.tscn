@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://c3d6ubfw0vny2" path="res://scene/test_object.tscn" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://bug3ewtbcshxk" path="res://scene/enemy.tscn" id="3_wp4xf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
+size = Vector2(20, 657.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6au5"]
+size = Vector2(1153, 20)
+
 [node name="Main" type="Node2D" unique_id=1013720349]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1491615867]
@@ -21,3 +27,29 @@ position = Vector2(508, 306)
 
 [node name="Enemy" parent="Objects" unique_id=81298573 instance=ExtResource("3_wp4xf")]
 position = Vector2(439, 322)
+
+[node name="Boundary" type="Node2D" parent="." unique_id=263660475]
+
+[node name="Border" type="StaticBody2D" parent="Boundary" unique_id=1640782485]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/Border" unique_id=869743673]
+position = Vector2(-10, 325)
+shape = SubResource("RectangleShape2D_a4kta")
+
+[node name="Border2" type="StaticBody2D" parent="Boundary" unique_id=353907429]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/Border2" unique_id=1405863285]
+position = Vector2(1162, 320.25)
+shape = SubResource("RectangleShape2D_a4kta")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundary" unique_id=712541119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D" unique_id=1284439710]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_h6au5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundary" unique_id=1537132707]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2" unique_id=1044405722]
+position = Vector2(575.5, 658)
+shape = SubResource("RectangleShape2D_h6au5")
