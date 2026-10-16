@@ -13,43 +13,121 @@ size = Vector2(1153, 20)
 [node name="Main" type="Node2D" unique_id=1013720349]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1491615867]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 1146.0
+offset_bottom = 646.0
 color = Color(0.5649617, 0.5649616, 0.5649616, 1)
 
 [node name="Objects" type="Node2D" parent="." unique_id=345714413]
 
 [node name="Player" parent="Objects" unique_id=806310312 instance=ExtResource("1_itxqv")]
 position = Vector2(575, 325)
-
-[node name="TestObject" parent="Objects" unique_id=1373748153 instance=ExtResource("2_v0l8b")]
-position = Vector2(508, 306)
+scale = Vector2(0.6672624, 0.726332)
+collision_mask = 6
 
 [node name="Enemy" parent="Objects" unique_id=81298573 instance=ExtResource("3_wp4xf")]
 position = Vector2(439, 322)
+scale = Vector2(0.7326332, 0.7261702)
+collision_layer = 2
+collision_mask = 5
 
 [node name="Boundary" type="Node2D" parent="." unique_id=263660475]
 
 [node name="Border" type="StaticBody2D" parent="Boundary" unique_id=1640782485]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/Border" unique_id=869743673]
 position = Vector2(-10, 325)
 shape = SubResource("RectangleShape2D_a4kta")
 
 [node name="Border2" type="StaticBody2D" parent="Boundary" unique_id=353907429]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/Border2" unique_id=1405863285]
 position = Vector2(1162, 320.25)
 shape = SubResource("RectangleShape2D_a4kta")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundary" unique_id=712541119]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D" unique_id=1284439710]
 position = Vector2(576, -10)
 shape = SubResource("RectangleShape2D_h6au5")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Boundary" unique_id=1537132707]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2" unique_id=1044405722]
 position = Vector2(575.5, 658)
 shape = SubResource("RectangleShape2D_h6au5")
+
+[node name="Environment" type="Node2D" parent="." unique_id=1692691972]
+
+[node name="Wall2" parent="Environment" unique_id=1373748153 instance=ExtResource("2_v0l8b")]
+position = Vector2(37, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall" parent="Environment" unique_id=1884591356 instance=ExtResource("2_v0l8b")]
+position = Vector2(508, 306)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall3" parent="Environment" unique_id=724156557 instance=ExtResource("2_v0l8b")]
+position = Vector2(218.00002, 106)
+scale = Vector2(1.0043256, 1.2178233)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall4" parent="Environment" unique_id=1448729545 instance=ExtResource("2_v0l8b")]
+position = Vector2(325, 104)
+scale = Vector2(1.0043256, 1.2178233)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall5" parent="Environment" unique_id=1796463031 instance=ExtResource("2_v0l8b")]
+position = Vector2(246, 199)
+rotation = -1.5733367
+scale = Vector2(1.0017567, 1.4523954)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall6" parent="Environment" unique_id=1203009691 instance=ExtResource("2_v0l8b")]
+position = Vector2(246.00005, 84.00001)
+rotation = -1.5733367
+scale = Vector2(1.0017567, 1.4523954)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall7" parent="Environment" unique_id=2091210057 instance=ExtResource("2_v0l8b")]
+position = Vector2(956.00006, 47)
+rotation = -1.5733367
+scale = Vector2(-21.30963, 1.155643)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall8" parent="Environment" unique_id=259186235 instance=ExtResource("2_v0l8b")]
+position = Vector2(757, 48)
+rotation = -1.5733367
+scale = Vector2(-21.30963, 1.155643)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall9" parent="Environment" unique_id=1946279720 instance=ExtResource("2_v0l8b")]
+position = Vector2(1058, 472.99997)
+rotation = 0.0068517923
+scale = Vector2(-21.30963, 1.155643)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Wall10" parent="Environment" unique_id=199308584 instance=ExtResource("2_v0l8b")]
+position = Vector2(253.00005, 241.00002)
+rotation = -1.5755969
+scale = Vector2(-21.30963, 1.155643)
+collision_layer = 4
+collision_mask = 0
