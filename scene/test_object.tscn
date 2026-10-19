@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
 size = Vector2(17, 48)
 
-[node name="TestObject" type="StaticBody2D" unique_id=1373748153]
+[node name="TestObject" type="StaticBody2D" unique_id=1373748153 groups=["navigation_polygon_source_geometry_group"]]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1524167438]
 offset_right = 17.0

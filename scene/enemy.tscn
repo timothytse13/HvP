@@ -18,3 +18,5 @@ texture = ExtResource("1_h08p8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290400799]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_a4kta")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277578888]
