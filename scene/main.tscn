@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://srbuskkoe62a"]
 
+[ext_resource type="Script" uid="uid://c6yfcku0fwmau" path="res://scene/main.gd" id="1_brvut"]
 [ext_resource type="PackedScene" uid="uid://d1fpb7i0dtaii" path="res://scene/player.tscn" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://c3d6ubfw0vny2" path="res://scene/test_object.tscn" id="2_v0l8b"]
-[ext_resource type="PackedScene" uid="uid://bug3ewtbcshxk" path="res://scene/enemy.tscn" id="3_wp4xf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
 size = Vector2(20, 657.5)
@@ -18,6 +18,7 @@ source_geometry_mode = 2
 agent_radius = 16.0
 
 [node name="Main" type="Node2D" unique_id=1013720349]
+script = ExtResource("1_brvut")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1491615867]
 offset_left = -6.0
@@ -32,12 +33,6 @@ color = Color(0.5649617, 0.5649616, 0.5649616, 1)
 position = Vector2(575, 325)
 scale = Vector2(0.6672624, 0.726332)
 collision_mask = 6
-
-[node name="Enemy" parent="Objects" unique_id=81298573 instance=ExtResource("3_wp4xf")]
-position = Vector2(439, 322)
-scale = Vector2(0.7326332, 0.7261702)
-collision_layer = 2
-collision_mask = 5
 
 [node name="Boundary" type="Node2D" parent="." unique_id=263660475]
 
@@ -140,4 +135,27 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1565911227]
+position = Vector2(0, -3)
 navigation_polygon = SubResource("NavigationPolygon_wp4xf")
+
+[node name="Timer" type="Node" parent="." unique_id=1807241642]
+
+[node name="EnemySpawn" type="Timer" parent="Timer" unique_id=504428455]
+wait_time = 3.0
+autostart = true
+
+[node name="EnemySpawnPos" type="Node2D" parent="." unique_id=1731698693]
+position = Vector2(282, 132)
+
+[node name="Pos1" type="Marker2D" parent="EnemySpawnPos" unique_id=1538989454]
+
+[node name="Pos2" type="Marker2D" parent="EnemySpawnPos" unique_id=312858349]
+position = Vector2(605, -80)
+
+[node name="Pos3" type="Marker2D" parent="EnemySpawnPos" unique_id=1448337939]
+position = Vector2(-265, -106)
+
+[node name="Pos4" type="Marker2D" parent="EnemySpawnPos" unique_id=1890534312]
+position = Vector2(819, 454)
+
+[connection signal="timeout" from="Timer/EnemySpawn" to="." method="_on_enemy_spawn_timeout"]

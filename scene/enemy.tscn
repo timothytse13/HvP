@@ -7,16 +7,26 @@
 radius = 12.0
 height = 24.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6au5"]
+radius = 12.0
+height = 24.0
+
 [node name="Enemy" type="CharacterBody2D" unique_id=81298573]
 script = ExtResource("1_f87vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290400799]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_a4kta")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1155139613]
 position = Vector2(9.5, 11.000002)
 scale = Vector2(0.13125, 0.13333334)
 texture = ExtResource("1_h08p8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290400799]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_a4kta")
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=277578888]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=795348011]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1502162954]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_h6au5")
