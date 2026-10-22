@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6yfcku0fwmau" path="res://scene/main.gd" id="1_brvut"]
 [ext_resource type="PackedScene" uid="uid://d1fpb7i0dtaii" path="res://scene/player.tscn" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://c3d6ubfw0vny2" path="res://scene/test_object.tscn" id="2_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://s2bejxvemkum" path="res://scene/pause_menu.tscn" id="4_brvut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
 size = Vector2(20, 657.5)
@@ -157,5 +158,9 @@ position = Vector2(-265, -106)
 
 [node name="Pos4" type="Marker2D" parent="EnemySpawnPos" unique_id=1890534312]
 position = Vector2(819, 454)
+
+[node name="Pause" parent="." unique_id=1770138932 instance=ExtResource("4_brvut")]
+process_mode = 2
+visible = false
 
 [connection signal="timeout" from="Timer/EnemySpawn" to="." method="_on_enemy_spawn_timeout"]
