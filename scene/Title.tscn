@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c3fcmr35fvkb0"]
+
+[ext_resource type="Script" uid="uid://uk0dagsqbd1b" path="res://scene/title.gd" id="1_ebljr"]
+
+[node name="Title" type="Control" unique_id=1010501516]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ebljr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=100885993]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0.24331394, 0.28968588, 0.404091, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=12344457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="ColorRect/CenterContainer" unique_id=1945432509]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "HvP Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="ColorRect" unique_id=399856797]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 376.0
+offset_right = 653.0
+offset_bottom = 399.0
+text = "Press Space to Start"
+horizontal_alignment = 1
+vertical_alignment = 1
