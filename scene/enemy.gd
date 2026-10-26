@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal died
 
 const SPEED = 100.0
 
@@ -8,6 +9,8 @@ const SPEED = 100.0
 var player: CharacterBody2D
 var enemy_scene: PackedScene = preload("res://scene/enemy.tscn")
 
+var max_health: int = 100
+var health: int = max_health
 
 func _ready() -> void:
 	player = get_parent().get_node("Player")
@@ -24,3 +27,13 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = direction * SPEED	
 	move_and_slide()
+
+func take_damage(amount: int) -> void:
+	health = health - amount
+	$HealthBar.value = health
+	if health <= 0:
+		die()
+		
+func die() -> void:
+	died.emit()
+	queue_free()

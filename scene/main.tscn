@@ -163,4 +163,13 @@ position = Vector2(819, 454)
 process_mode = 2
 visible = false
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=90113772]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=319910782]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "DEBUG DAMAGE
+"
+
 [connection signal="timeout" from="Timer/EnemySpawn" to="." method="_on_enemy_spawn_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
