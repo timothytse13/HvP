@@ -38,13 +38,14 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_h6au5")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=472980730]
-offset_left = -14.0
-offset_top = -11.999999
-offset_right = -10.0
-offset_bottom = 15.000001
-rotation = -1.5757116
+offset_left = 16.66794
+offset_top = -12.125904
+offset_right = 51.336136
+offset_bottom = -8.095254
+rotation = -3.145698
 theme_override_colors/font_color = Color(0.8869757, 0.97586745, 0.9196592, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_f87vc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8u16h")
 value = 100.0
+fill_mode = 1
 show_percentage = false
