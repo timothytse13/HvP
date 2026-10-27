@@ -17,7 +17,9 @@ bg_color = Color(0.2232663, 0.30950043, 0.51650226, 0.5176471)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u16h"]
 bg_color = Color(1, 0.09803922, 0.21176471, 1)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=81298573]
+[node name="Enemy" type="CharacterBody2D" unique_id=81298573 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_f87vc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1290400799]

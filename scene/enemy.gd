@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal died
 
-const SPEED = 100.0
+const SPEED = 50.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 

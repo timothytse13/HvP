@@ -151,7 +151,7 @@ position = Vector2(282, 132)
 [node name="Pos1" type="Marker2D" parent="EnemySpawnPos" unique_id=1538989454]
 
 [node name="Pos2" type="Marker2D" parent="EnemySpawnPos" unique_id=312858349]
-position = Vector2(605, -80)
+position = Vector2(605, -60)
 
 [node name="Pos3" type="Marker2D" parent="EnemySpawnPos" unique_id=1448337939]
 position = Vector2(-265, -106)
