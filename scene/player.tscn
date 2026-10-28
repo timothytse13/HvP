@@ -37,5 +37,5 @@ texture = ExtResource("3_fvtld")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=600993877]
-position = Vector2(16.875, 1)
+position = Vector2(20, 1)
 shape = SubResource("RectangleShape2D_fvtld")

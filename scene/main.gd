@@ -1,3 +1,6 @@
+# TODO: FIX ENEMY SPAWN POSITIONS
+
+
 extends Node2D
 
 var enemy_scene: PackedScene = preload("res://scene/enemy.tscn")

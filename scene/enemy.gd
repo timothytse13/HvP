@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	nav_agent.target_position = player.global_position
 	var next_position = nav_agent.get_next_path_position()
 	var direction = global_position.direction_to(next_position)
+	print(global_position.distance_to(player.global_position))
 	
 	#print("enemy: ", global_position, " | Next: ", next_position, " | Direction: ", direction)
 	
