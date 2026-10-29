@@ -11,7 +11,14 @@ height = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtld"]
 size = Vector2(24.25, 13)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvtld"]
+bg_color = Color(0.22352941, 0.30980393, 0.5176471, 0.5176471)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
+bg_color = Color(0, 0.65882355, 0, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=806310312]
+motion_mode = 1
 script = ExtResource("1_hjaqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2121710192]
@@ -39,3 +46,16 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=600993877]
 position = Vector2(20, 1)
 shape = SubResource("RectangleShape2D_fvtld")
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="." unique_id=826723732]
+offset_left = 16.66794
+offset_top = -12.125904
+offset_right = 51.336136
+offset_bottom = -8.095254
+rotation = -3.145698
+theme_override_colors/font_color = Color(0.8869757, 0.97586745, 0.9196592, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_fvtld")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ct4mp")
+value = 100.0
+fill_mode = 1
+show_percentage = false

@@ -47,3 +47,7 @@ func _on_enemy_died() -> void: #function checks to see if enemy has died, if die
 	current_enemy = null
 	$Timer/EnemySpawn.start()
 	
+
+
+func _on_player_died() -> void:
+	get_tree().change_scene_to_file("res://scene/Title.tscn")
