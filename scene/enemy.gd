@@ -2,6 +2,13 @@ extends CharacterBody2D
 
 signal died
 
+enum State {
+	APPRAOCH,
+	ATTACH,
+	RETREST
+}
+
+
 const SPEED = 150.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D

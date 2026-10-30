@@ -1,6 +1,3 @@
-# TODO: FIX ENEMY SPAWN POSITIONS
-
-
 extends Node2D
 
 var enemy_scene: PackedScene = preload("res://scene/enemy.tscn")
@@ -32,7 +29,7 @@ func _on_enemy_spawn_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
 	$Objects.add_child(enemy)
 	var pos = $EnemySpawnPos.get_children().pick_random()
-	enemy.position = pos.position
+	enemy.global_position = pos.global_position
 	print("Enemy has spawned at: ", pos.name)
 	enemy_spawned = true     # make sure to uncomment in real gameplay, spawn infinitely for debug purpose
 	current_enemy = enemy
