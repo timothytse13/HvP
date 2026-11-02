@@ -82,26 +82,26 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="Wall3" parent="Environment" unique_id=724156557 instance=ExtResource("2_v0l8b")]
-position = Vector2(218.00002, 106)
+position = Vector2(210.00002, 106)
 scale = Vector2(1.0043256, 1.2178233)
 collision_layer = 4
 collision_mask = 0
 
 [node name="Wall4" parent="Environment" unique_id=1448729545 instance=ExtResource("2_v0l8b")]
-position = Vector2(325, 104)
+position = Vector2(333.00003, 104)
 scale = Vector2(1.0043256, 1.2178233)
 collision_layer = 4
 collision_mask = 0
 
 [node name="Wall5" parent="Environment" unique_id=1796463031 instance=ExtResource("2_v0l8b")]
-position = Vector2(246, 199)
+position = Vector2(245.99995, 208)
 rotation = -1.5733367
 scale = Vector2(1.0017567, 1.4523954)
 collision_layer = 4
 collision_mask = 0
 
 [node name="Wall6" parent="Environment" unique_id=1203009691 instance=ExtResource("2_v0l8b")]
-position = Vector2(246.00005, 84.00001)
+position = Vector2(246.00003, 78.00001)
 rotation = -1.5733367
 scale = Vector2(1.0017567, 1.4523954)
 collision_layer = 4
@@ -136,6 +136,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1565911227]
+visible = false
 position = Vector2(0, -3)
 navigation_polygon = SubResource("NavigationPolygon_wp4xf")
 

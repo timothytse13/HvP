@@ -1,3 +1,4 @@
+#TODO: Use Piskel for sprite sheets. Make a sprite sheet for weapon
 extends Node2D
 
 var enemy_scene: PackedScene = preload("res://scene/enemy.tscn")

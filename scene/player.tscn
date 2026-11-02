@@ -17,7 +17,7 @@ bg_color = Color(0.22352941, 0.30980393, 0.5176471, 0.5176471)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
 bg_color = Color(0, 0.65882355, 0, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=806310312]
+[node name="Player" type="CharacterBody2D" unique_id=806310312 groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_hjaqi")
 
