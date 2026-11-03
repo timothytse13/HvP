@@ -17,6 +17,9 @@ bg_color = Color(0.22352941, 0.30980393, 0.5176471, 0.5176471)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u16h"]
 bg_color = Color(1, 0.09803922, 0.21176471, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
+size = Vector2(20, 33)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=81298573 groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 5
@@ -52,3 +55,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_8u16h")
 value = 100.0
 fill_mode = 1
 show_percentage = false
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=2111607412]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=66032162]
+position = Vector2(15, 2)
+shape = SubResource("RectangleShape2D_a4kta")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=29265709]
+wait_time = 2.0
+one_shot = true

@@ -12,11 +12,11 @@ size = Vector2(20, 657.5)
 size = Vector2(1163.5, 20.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wp4xf"]
-vertices = PackedVector2Array(309, 168.8125, 251.07031, 168.95313, 251.07031, 102.97656, 309, 102.828125, 679.85156, 457.40625, 829.4297, 429.09375, 940.96094, 428.3125, 1028.4297, 428.09375, 1074.1094, 460.10938, 326.28906, 621.90625, 1131, 630.02344, 14.96875, 631.96875, 238.82031, 622.34375, 1131, 12.046875, 1073.5078, 547.5781, 741.96094, 429.3125, 740.96094, 35.039063, 541, 373, 541, 293, 679.2578, 544.8672, 1027.4297, 33.820313, 70, 15.7421875, 939.96094, 34.039063, 358.0703, 181.45313, 358.0703, 91, 492, 293, 324.39063, 227.64844, 492, 373, 828.4297, 34.820313, 229.89844, 54.007813, 230.02344, 93, 202, 93, 70, 67, 331.75, 217.78125, 331.65625, 181.45313, 14.0234375, 15.9375, 21, 15.921875, 21, 67, 236.92188, 228.07813, 202, 183.45313, 230.04688, 218.03906, 331.71875, 91, 331.6328, 53.757813, 229.9375, 183.45313)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(8, 13, 10, 14), PackedInt32Array(15, 5, 4), PackedInt32Array(16, 15, 4, 17, 18), PackedInt32Array(14, 10, 9, 19), PackedInt32Array(13, 8, 7, 20), PackedInt32Array(21, 13, 20, 22), PackedInt32Array(23, 24, 16, 18, 25), PackedInt32Array(19, 9, 26, 27), PackedInt32Array(6, 5, 28, 22), PackedInt32Array(21, 22, 28, 16), PackedInt32Array(21, 29, 30, 31, 32), PackedInt32Array(33, 34, 23, 25, 27), PackedInt32Array(35, 36, 37, 11), PackedInt32Array(38, 12, 11, 37, 32, 39, 40), PackedInt32Array(24, 41, 42, 16), PackedInt32Array(39, 43, 40), PackedInt32Array(21, 16, 42, 29), PackedInt32Array(32, 31, 39), PackedInt32Array(38, 40, 33, 26), PackedInt32Array(26, 33, 27), PackedInt32Array(19, 27, 17, 4)])
+vertices = PackedVector2Array(684.8125, 462.4375, 824.4219, 424.10156, 945.9531, 423.29688, 1023.4219, 423.10156, 1069.0781, 465.07813, 238.07031, 178.45313, 322, 176.45313, 361.0703, 176.45313, 326.64063, 182.77344, 234.92188, 183, 321.2578, 616.9375, 1136, 635.0078, 9.9765625, 636.97656, 243.78906, 617.3125, 326.7422, 91.78906, 361.0703, 96, 322, 96, 235.03125, 92.03125, 536, 298, 497, 298, 326.7422, 221.78906, 1136, 7.03125, 1068.5391, 542.5469, 746.9531, 424.29688, 536, 368, 684.2969, 539.89844, 1022.4375, 38.828125, 65, 10.7578125, 944.96875, 39.03125, 745.96875, 40.03125, 497, 368, 319.42188, 232.67969, 238.07031, 98, 199, 98, 823.4375, 39.828125, 9.0078125, 10.9609375, 26, 10.8984375, 26, 62, 241.95313, 233.04688, 65, 62, 199, 178.45313, 235.03125, 222.03125, 326.64063, 52.773438, 234.92188, 53)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(7, 18, 19, 20, 8), PackedInt32Array(4, 21, 11, 22), PackedInt32Array(23, 1, 0), PackedInt32Array(23, 0, 24, 18), PackedInt32Array(22, 11, 10, 25), PackedInt32Array(21, 4, 3, 26), PackedInt32Array(27, 21, 26, 28), PackedInt32Array(7, 15, 29, 23, 18), PackedInt32Array(30, 25, 10, 31, 20), PackedInt32Array(6, 5, 32, 16), PackedInt32Array(17, 16, 32, 33), PackedInt32Array(2, 1, 34, 28), PackedInt32Array(27, 28, 34, 29), PackedInt32Array(35, 36, 37, 12), PackedInt32Array(38, 13, 12, 37, 39, 40, 41), PackedInt32Array(15, 14, 42, 29), PackedInt32Array(27, 43, 17, 33, 39), PackedInt32Array(40, 5, 9), PackedInt32Array(40, 9, 41), PackedInt32Array(20, 19, 30), PackedInt32Array(27, 29, 42, 43), PackedInt32Array(39, 33, 40), PackedInt32Array(38, 41, 20, 31), PackedInt32Array(25, 30, 24, 0)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2, 0, -1, 648, 1147, 646, 1147, -4)])
 source_geometry_mode = 2
-agent_radius = 16.0
+agent_radius = 11.0
 
 [node name="Main" type="Node2D" unique_id=1013720349]
 script = ExtResource("1_brvut")
@@ -136,7 +136,6 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1565911227]
-visible = false
 position = Vector2(0, -3)
 navigation_polygon = SubResource("NavigationPolygon_wp4xf")
 
