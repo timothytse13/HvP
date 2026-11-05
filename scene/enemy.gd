@@ -28,21 +28,22 @@ func _ready() -> void:
 
 func approach() -> void:
 	var distance = global_position.distance_to(player.global_position)
-	nav_agent.target_position = player.global_position
-	print("Distance: ", distance)
-	if distance <= 22: # Distance between player and enemy before stopping
-		#velocity = Vector2.ZERO
-		#move_and_slide() #eventually transition to next state
+	#print("Distance: ", distance)
+	if distance <= 30: # Distance between player and enemy before stopping
+		print("Entering attack")
 		current_state = State.ATTACK
-		#return
-	var next_position = nav_agent.get_next_path_position()
-	var direction = global_position.direction_to(next_position)
-	velocity = direction * SPEED
-	move_and_slide()
+		return
+	move_to_player()
 
 #TODO: So far the enemy is relentless will instantly deal damage to player the moment the player body enters hitbox. Fix with timer probably
 #TODO: Enemy also attacks, then sits there since no movement logic for pursuit. Fix with check for attack distance then attack
 func attack() -> void:
+	var distance = global_position.distance_to(player.global_position)
+	print("Attack distance: ", distance)
+	if distance > 24:
+		print("Closing distance in attack state")
+		move_to_player()
+		return
 	if $AttackTimer.is_stopped():
 		print("attack timer stopped")
 		facing_direction = global_position.direction_to(player.global_position)
@@ -81,4 +82,8 @@ func die() -> void:
 
 # Use this for all movement related code
 func move_to_player() -> void:
-	pass
+	nav_agent.target_position = player.global_position
+	var next_position = nav_agent.get_next_path_position()
+	var direction = global_position.direction_to(next_position)
+	velocity = direction * SPEED
+	move_and_slide()
