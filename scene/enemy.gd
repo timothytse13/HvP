@@ -20,6 +20,7 @@ var facing_direction: Vector2 = Vector2.DOWN
 var max_health: int = 100
 var health: int = max_health
 var attack_count: int = 0
+var attack_started: bool = false
 
 var current_state = State.APPROACH
 
@@ -39,12 +40,24 @@ func approach() -> void:
 #TODO: Enemy also attacks, then sits there since no movement logic for pursuit. Fix with check for attack distance then attack
 func attack() -> void:
 	var distance = global_position.distance_to(player.global_position)
-	print("Attack distance: ", distance)
+	#print("Attack distance: ", distance)
+	
 	if distance > 24:
-		print("Closing distance in attack state")
+		#print("Closing distance in attack state")
+		attack_started = false
+		$WindupTimer.stop()
 		move_to_player()
 		return
-	if $AttackTimer.is_stopped():
+	
+	velocity = Vector2.ZERO
+	move_and_slide()
+	
+	if not attack_started:
+		$WindupTimer.start()
+		attack_started = true
+		return
+		
+	if $AttackTimer.is_stopped() and $WindupTimer.is_stopped():
 		print("attack timer stopped")
 		facing_direction = global_position.direction_to(player.global_position)
 		$AttackArea.position = facing_direction * 30
@@ -55,6 +68,7 @@ func attack() -> void:
 				print("Enemy succesfully attacked player")
 		attack_count = attack_count + 1
 		$AttackTimer.start()
+		attack_started = false
 		if attack_count >= 2:
 			print("Entering retreat")
 			current_state = State.RETREAT

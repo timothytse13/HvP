@@ -64,5 +64,8 @@ position = Vector2(15, 2)
 shape = SubResource("RectangleShape2D_a4kta")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=29265709]
+one_shot = true
+
+[node name="WindupTimer" type="Timer" parent="." unique_id=1111997876]
 wait_time = 2.0
 one_shot = true
