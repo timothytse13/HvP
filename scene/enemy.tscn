@@ -18,7 +18,7 @@ bg_color = Color(0.22352941, 0.30980393, 0.5176471, 0.5176471)
 bg_color = Color(1, 0.09803922, 0.21176471, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4kta"]
-size = Vector2(20, 33)
+size = Vector2(22, 33)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=81298573 groups=["Enemy"]]
 collision_layer = 2
@@ -62,6 +62,11 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=66032162]
 position = Vector2(15, 2)
 shape = SubResource("RectangleShape2D_a4kta")
+
+[node name="Polygon2D" type="Polygon2D" parent="AttackArea" unique_id=118957635]
+visible = false
+color = Color(0.76234806, 0.12838554, 9.62615e-06, 0.5647059)
+polygon = PackedVector2Array(4, -14, 4, 19, 26, 19, 26, -15, 4, -15)
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=29265709]
 one_shot = true

@@ -46,6 +46,7 @@ func attack() -> void:
 		#print("Closing distance in attack state")
 		attack_started = false
 		$WindupTimer.stop()
+		$AttackArea/Polygon2D.hide()
 		move_to_player()
 		return
 	
@@ -53,22 +54,29 @@ func attack() -> void:
 	move_and_slide()
 	
 	if not attack_started:
+		facing_direction = global_position.direction_to(player.global_position)
+		$AttackArea.position = facing_direction * 30
+		
 		$WindupTimer.start()
+		$AttackArea/Polygon2D.show()
 		attack_started = true
 		return
 		
 	if $AttackTimer.is_stopped() and $WindupTimer.is_stopped():
+		
 		print("attack timer stopped")
-		facing_direction = global_position.direction_to(player.global_position)
-		$AttackArea.position = facing_direction * 30
 		print("Bodies detected: ", $AttackArea.get_overlapping_bodies().size())
+		
 		for body in $AttackArea.get_overlapping_bodies():
 			if body.is_in_group("Player"):
 				body.take_damage(10)
 				print("Enemy succesfully attacked player")
+				
 		attack_count = attack_count + 1
 		$AttackTimer.start()
 		attack_started = false
+		$AttackArea/Polygon2D.hide()
+		
 		if attack_count >= 2:
 			print("Entering retreat")
 			current_state = State.RETREAT
