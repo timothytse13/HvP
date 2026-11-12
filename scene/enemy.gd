@@ -47,7 +47,7 @@ func attack() -> void:
 		#print("Closing distance in attack state")
 		attack_started = false
 		$WindupTimer.stop()
-		$AttackArea/Polygon2D.hide()
+		$AttackPivot/AttackArea/Polygon2D.hide()
 		move_to_player()
 		return
 	
@@ -55,11 +55,12 @@ func attack() -> void:
 	move_and_slide()
 	
 	if not attack_started:
-		facing_direction = global_position.direction_to(player.global_position)
-		$AttackArea.position = facing_direction * 30
+		#facing_direction = global_position.direction_to(player.global_position)
+		#$AttackArea.position = facing_direction * 30
+		$AttackPivot/AttackArea.position = Vector2(30, 0)
 		
 		$WindupTimer.start()
-		$AttackArea/Polygon2D.show()
+		$AttackPivot/AttackArea/Polygon2D.show()
 		attack_started = true
 		return
 		
@@ -76,7 +77,7 @@ func attack() -> void:
 		attack_count = attack_count + 1
 		$AttackTimer.start()
 		attack_started = false
-		$AttackArea/Polygon2D.hide()
+		$AttackPivot/AttackArea/Polygon2D.hide()
 		
 		if attack_count >= 2:
 			print("Entering retreat")
@@ -107,6 +108,9 @@ func retreat() -> void:
 func _physics_process(delta: float) -> void:
 	if not player:
 		return
+	
+	rotate_towards_player(delta)	
+	
 	match current_state:
 		State.APPROACH:
 			approach()
@@ -132,3 +136,15 @@ func move_to_player() -> void:
 	var direction = global_position.direction_to(next_position)
 	velocity = direction * SPEED
 	move_and_slide()
+	
+func _on_vision_cone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("Saw body")
+
+func rotate_towards_player(delta: float) -> void:
+	var target_angle = global_position.angle_to_point(player.global_position)
+	$AttackPivot.rotation = lerp_angle(
+		$AttackPivot.rotation,
+		target_angle,
+		5.0 * delta
+	)

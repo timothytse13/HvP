@@ -56,21 +56,31 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 
-[node name="AttackArea" type="Area2D" parent="." unique_id=2111607412]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=66032162]
-position = Vector2(15, 2)
-shape = SubResource("RectangleShape2D_a4kta")
-
-[node name="Polygon2D" type="Polygon2D" parent="AttackArea" unique_id=118957635]
-visible = false
-color = Color(0.76234806, 0.12838554, 9.62615e-06, 0.5647059)
-polygon = PackedVector2Array(4, -14, 4, 19, 26, 19, 26, -15, 4, -15)
-
 [node name="AttackTimer" type="Timer" parent="." unique_id=29265709]
 one_shot = true
 
 [node name="WindupTimer" type="Timer" parent="." unique_id=1111997876]
 wait_time = 2.0
 one_shot = true
+
+[node name="AttackPivot" type="Node2D" parent="." unique_id=916630268]
+
+[node name="VisionCone" type="Area2D" parent="AttackPivot" unique_id=909928065]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackPivot/VisionCone" unique_id=2062733]
+polygon = PackedVector2Array(0, 0, 98, -78, 107, -59, 123, -10, 109, 50, 97, 75)
+
+[node name="AttackArea" type="Area2D" parent="AttackPivot" unique_id=2111607412]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot/AttackArea" unique_id=66032162]
+position = Vector2(15, 2)
+shape = SubResource("RectangleShape2D_a4kta")
+
+[node name="Polygon2D" type="Polygon2D" parent="AttackPivot/AttackArea" unique_id=118957635]
+visible = false
+color = Color(0.76234806, 0.12838554, 9.62615e-06, 0.5647059)
+polygon = PackedVector2Array(4, -14, 4, 19, 26, 19, 26, -15, 4, -15)
+
+[connection signal="body_entered" from="AttackPivot/VisionCone" to="." method="_on_vision_cone_body_entered"]
