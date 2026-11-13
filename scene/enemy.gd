@@ -55,9 +55,6 @@ func attack() -> void:
 	move_and_slide()
 	
 	if not attack_started:
-		#facing_direction = global_position.direction_to(player.global_position)
-		#$AttackArea.position = facing_direction * 30
-		$AttackPivot/AttackArea.position = Vector2(30, 0)
 		
 		$WindupTimer.start()
 		$AttackPivot/AttackArea/Polygon2D.show()
@@ -67,9 +64,9 @@ func attack() -> void:
 	if $AttackTimer.is_stopped() and $WindupTimer.is_stopped():
 		
 		print("attack timer stopped")
-		print("Bodies detected: ", $AttackArea.get_overlapping_bodies().size())
+		print("Bodies detected: ", $AttackPivot/AttackArea.get_overlapping_bodies().size())
 		
-		for body in $AttackArea.get_overlapping_bodies():
+		for body in $AttackPivot/AttackArea.get_overlapping_bodies():
 			if body.is_in_group("Player"):
 				body.take_damage(10)
 				print("Enemy succesfully attacked player")
