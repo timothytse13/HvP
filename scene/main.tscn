@@ -12,11 +12,11 @@ size = Vector2(20, 657.5)
 size = Vector2(1163.5, 20.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wp4xf"]
-vertices = PackedVector2Array(684.8125, 462.4375, 824.4219, 424.10156, 945.9531, 423.29688, 1023.4219, 423.10156, 1069.0781, 465.07813, 238.07031, 178.45313, 322, 176.45313, 361.0703, 176.45313, 326.64063, 182.77344, 234.92188, 183, 321.2578, 616.9375, 1136, 635.0078, 9.9765625, 636.97656, 243.78906, 617.3125, 326.7422, 91.78906, 361.0703, 96, 322, 96, 235.03125, 92.03125, 536, 298, 497, 298, 326.7422, 221.78906, 1136, 7.03125, 1068.5391, 542.5469, 746.9531, 424.29688, 536, 368, 684.2969, 539.89844, 1022.4375, 38.828125, 65, 10.7578125, 944.96875, 39.03125, 745.96875, 40.03125, 497, 368, 319.42188, 232.67969, 238.07031, 98, 199, 98, 823.4375, 39.828125, 9.0078125, 10.9609375, 26, 10.8984375, 26, 62, 241.95313, 233.04688, 65, 62, 199, 178.45313, 235.03125, 222.03125, 326.64063, 52.773438, 234.92188, 53)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(7, 18, 19, 20, 8), PackedInt32Array(4, 21, 11, 22), PackedInt32Array(23, 1, 0), PackedInt32Array(23, 0, 24, 18), PackedInt32Array(22, 11, 10, 25), PackedInt32Array(21, 4, 3, 26), PackedInt32Array(27, 21, 26, 28), PackedInt32Array(7, 15, 29, 23, 18), PackedInt32Array(30, 25, 10, 31, 20), PackedInt32Array(6, 5, 32, 16), PackedInt32Array(17, 16, 32, 33), PackedInt32Array(2, 1, 34, 28), PackedInt32Array(27, 28, 34, 29), PackedInt32Array(35, 36, 37, 12), PackedInt32Array(38, 13, 12, 37, 39, 40, 41), PackedInt32Array(15, 14, 42, 29), PackedInt32Array(27, 43, 17, 33, 39), PackedInt32Array(40, 5, 9), PackedInt32Array(40, 9, 41), PackedInt32Array(20, 19, 30), PackedInt32Array(27, 29, 42, 43), PackedInt32Array(39, 33, 40), PackedInt32Array(38, 41, 20, 31), PackedInt32Array(25, 30, 24, 0)])
+vertices = PackedVector2Array(682.8281, 460.4297, 826.4219, 426.10156, 943.9531, 425.29688, 1025.4219, 425.10156, 1071.0938, 463.09375, 328.64063, 180.77344, 232.90625, 181, 240.07031, 180.45313, 320, 178.45313, 363.0703, 178.45313, 328.7422, 93.78906, 363.0703, 94, 320, 94, 323.27344, 618.9297, 1134, 633.02344, 11.96875, 634.96875, 241.79688, 619.3203, 233.03906, 94.03125, 197, 180.45313, 538, 296, 495, 296, 328.7422, 223.78906, 1134, 9.0390625, 1070.5313, 544.5625, 744.9531, 426.29688, 538, 370, 682.28125, 541.8906, 1024.4375, 36.828125, 67, 12.75, 942.96875, 37.03125, 743.96875, 38.03125, 495, 370, 321.40625, 230.67188, 825.4375, 37.828125, 11.0234375, 12.953125, 24, 12.8984375, 24, 64, 239.9375, 231.0625, 67, 64, 233.03906, 224.03125, 328.64063, 50.773438, 240.07031, 96, 197, 96, 232.90625, 51)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 10, 12), PackedInt32Array(18, 7, 6), PackedInt32Array(9, 19, 20, 21, 5), PackedInt32Array(4, 22, 14, 23), PackedInt32Array(24, 1, 0), PackedInt32Array(24, 0, 25, 19), PackedInt32Array(23, 14, 13, 26), PackedInt32Array(22, 4, 3, 27), PackedInt32Array(28, 22, 27, 29), PackedInt32Array(9, 11, 30, 24, 19), PackedInt32Array(31, 26, 13, 32, 21), PackedInt32Array(2, 1, 33, 29), PackedInt32Array(28, 29, 33, 30), PackedInt32Array(34, 35, 36, 15), PackedInt32Array(37, 16, 15, 36, 38, 39), PackedInt32Array(11, 10, 40, 30), PackedInt32Array(18, 6, 39), PackedInt32Array(8, 7, 41, 12), PackedInt32Array(17, 12, 41, 42), PackedInt32Array(28, 43, 17, 42, 38), PackedInt32Array(21, 20, 31), PackedInt32Array(28, 30, 40, 43), PackedInt32Array(38, 42, 18), PackedInt32Array(25, 0, 26, 31), PackedInt32Array(39, 21, 32, 37), PackedInt32Array(38, 18, 39)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-2, 0, -1, 648, 1147, 646, 1147, -4)])
 source_geometry_mode = 2
-agent_radius = 11.0
+agent_radius = 13.0
 
 [node name="Main" type="Node2D" unique_id=1013720349]
 script = ExtResource("1_brvut")
@@ -171,6 +171,17 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "DEBUG DAMAGE
 "
+
+[node name="PatrolPoints" type="Node2D" parent="." unique_id=155952064]
+
+[node name="Marker2D" type="Marker2D" parent="PatrolPoints" unique_id=2014703175]
+position = Vector2(98, 131)
+
+[node name="Marker2D2" type="Marker2D" parent="PatrolPoints" unique_id=1119765691]
+position = Vector2(108, 330)
+
+[node name="Marker2D3" type="Marker2D" parent="PatrolPoints" unique_id=1666993563]
+position = Vector2(112, 548)
 
 [connection signal="died" from="Objects/Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="Timer/EnemySpawn" to="." method="_on_enemy_spawn_timeout"]

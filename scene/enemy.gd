@@ -5,7 +5,8 @@ signal died
 enum State {
 	APPROACH,
 	ATTACK,
-	RETREAT
+	RETREAT,
+	PATROL
 }
 
 
@@ -25,8 +26,17 @@ var retreat_started: bool = false
 
 var current_state = State.APPROACH
 
+var patrol_points: Array[Node2D] = []
+var current_patrol_index: int = 0 # Position
+var patrol_initialized: bool = false
+
+
 func _ready() -> void:
 	player = get_parent().get_node("Player")
+	
+	var points = get_tree().current_scene.get_node("PatrolPoints")
+	for point in points.get_children():
+		patrol_points.append(point)
 
 func approach() -> void:
 	var distance = global_position.distance_to(player.global_position)
@@ -102,6 +112,9 @@ func retreat() -> void:
 	move_and_slide()
 	return
 
+func patrol() -> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	if not player:
 		return
@@ -115,6 +128,8 @@ func _physics_process(delta: float) -> void:
 			attack()
 		State.RETREAT:
 			retreat()
+		State.PATROL:
+			patrol()
 
 func take_damage(amount: int) -> void:
 	health = health - amount
@@ -145,3 +160,15 @@ func rotate_towards_player(delta: float) -> void:
 		target_angle,
 		5.0 * delta
 	)
+	
+func find_closest_patrol_point() -> void:
+	var closest_distance = INF
+	
+	for i in range(patrol_points.size()):
+		var distance = global_position.distance_to(patrol_points[i].global_position)
+		if distance < closest_distance:
+			closest_distance = closest_distance
+			current_patrol_index = i
+			
+	nav_agent.target_position = patrol_points[current_patrol_index].global_position
+	patrol_initialized = true
