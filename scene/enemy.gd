@@ -132,17 +132,18 @@ func _physics_process(delta: float) -> void:
 	if not player:
 		return
 	
-	rotate_towards_player(delta)	
-	
 	match current_state:
 		State.APPROACH:
 			approach()
+			rotate_towards_player(delta)
 		State.ATTACK:
 			attack()
+			rotate_towards_player(delta)
 		State.RETREAT:
 			retreat()
 		State.PATROL:
 			patrol()
+			rotate_towards_direction(delta)
 
 func take_damage(amount: int) -> void:
 	health = health - amount
@@ -168,6 +169,14 @@ func _on_vision_cone_body_entered(body: Node2D) -> void:
 
 func rotate_towards_player(delta: float) -> void:
 	var target_angle = global_position.angle_to_point(player.global_position)
+	$AttackPivot.rotation = lerp_angle(
+		$AttackPivot.rotation,
+		target_angle,
+		5.0 * delta
+	)
+
+func rotate_towards_direction(delta: float) -> void:
+	var target_angle = velocity.angle()
 	$AttackPivot.rotation = lerp_angle(
 		$AttackPivot.rotation,
 		target_angle,
